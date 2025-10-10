@@ -1,16 +1,12 @@
-import { StrictMode } from "react"
-import { createRoot } from "react-dom/client"
+import {createRoot} from "react-dom/client"
+import TestApp from "./App.jsx";
+import {StrictMode} from "react";
 
-export function App() {
-    return (
-        <StrictMode>
-            <h1>Hello World!</h1>
-        </StrictMode>
-    )
-}
 
 const root = document.getElementById("root")
 
 createRoot(root).render(
-  <App />
+    <StrictMode>
+        <TestApp/>
+    </StrictMode>
 )
