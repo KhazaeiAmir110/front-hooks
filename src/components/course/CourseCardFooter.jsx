@@ -12,7 +12,8 @@ function CourseCardFooter({course}) {
                 <div className="date">
                     {new Date(course.start).toLocaleDateString()}
                 </div>
-                <span className="badge badge--primary">{course.status}</span>
+                <span
+                    className={`badge ${course.status === "Active" ? "badge--primary" : course.status === "Upcoming" ? "badge--danger" : "badge--secondary"}`}>{course.status}</span>
             </div>
         </div>
     )
