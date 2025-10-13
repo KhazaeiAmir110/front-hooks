@@ -1,10 +1,11 @@
 import "./css/App.css"
 import CourseList from "./components/CourseList.jsx";
+import Header from "./components/Header.jsx";
 
 export function App() {
     return (
         <div>
-            <h1>My courses (3)</h1>
+            <Header/>
             <CourseList/>
         </div>
     )
