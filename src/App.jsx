@@ -1,12 +1,11 @@
 import "./css/App.css"
-
-import CoursesList from "./components/CoursesList.jsx";
+import CourseList from "./components/CourseList.jsx";
 
 export function App() {
     return (
         <div>
             <h1>My courses (3)</h1>
-            <CoursesList />
+            <CourseList/>
         </div>
     )
 }
