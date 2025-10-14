@@ -1,8 +1,8 @@
 import {createRoot} from "react-dom/client"
 import {StrictMode} from "react";
 
-import TestApp from "./App.jsx";
-import "./css/index.css"
+import TestApp from "./page/CourseListPage.jsx";
+import "./css/courseList/index.css"
 
 
 const root = document.getElementById("root")
