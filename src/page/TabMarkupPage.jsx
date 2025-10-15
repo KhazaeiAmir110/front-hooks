@@ -25,7 +25,7 @@ function TabMarkupPage() {
         <div className="tab">
             <div className="tab__header">
                 {tabData.map((item, index) => (
-                    <button key={index} className={item.id === activeTab ? "active" : ""}>
+                    <button onClick={() => setActiveTab(item.id)} key={index} className={item.id === activeTab ? "active" : ""}>
                         <span>{item.title}</span>
                         <span className={item.id === activeTab  ? "tab-indicator" : ""}></span>
                     </button>
