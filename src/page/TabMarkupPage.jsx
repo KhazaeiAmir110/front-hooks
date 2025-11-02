@@ -21,19 +21,42 @@ const tabData = [
 
 function TabMarkupPage() {
     const [activeTab, setActiveTab] = useState(0);
+    const [is_show, setIsShow] = useState(true);
+    const [count, setCount] = useState(0);
+
+    const handelActiveTab = (item) => {
+        setActiveTab(item.id)
+        setCount((count) => count + 1)
+        setCount((count) => count + 1)
+    }
+
+
     return (
-        <div className="tab">
-            <div className="tab__header">
-                {tabData.map((item, index) => (
-                    <button onClick={() => setActiveTab(item.id)} key={index} className={item.id === activeTab ? "active" : ""}>
-                        <span>{item.title}</span>
-                        <span className={item.id === activeTab  ? "tab-indicator" : ""}></span>
-                    </button>
-                ))}
-            </div>
-            <div className="tab-content">
-                {tabData[activeTab].content}
-            </div>
+        <div>
+            <button onClick={() => {
+                setIsShow(!is_show);
+            }}>❌
+            </button>
+
+            {
+                is_show ? (
+                        <div className="tab">
+                            <div className="tab__header">
+                                {tabData.map((item, index) => (
+                                    <button onClick={() => handelActiveTab(item)} key={index}
+                                            className={item.id === activeTab ? "active" : ""}>
+                                        <span>{item.title}</span>
+                                        <span className={item.id === activeTab ? "tab-indicator" : ""}></span>
+                                    </button>
+                                ))}
+                            </div>
+                            <div className="tab-content">
+                                {tabData[activeTab].content} - {count}
+                            </div>
+                        </div>
+                    )
+                    : null
+            }
         </div>
     )
 }
