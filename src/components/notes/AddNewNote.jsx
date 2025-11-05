@@ -1,12 +1,19 @@
 import "../../css/notes/App.css"
 import {useState} from "react";
 
-function AddNewNote(props) {
+function AddNewNote({onAddNewNode}) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
+
     const handelSubmit = (e) => {
         e.preventDefault();
+        if (!title || !description) return;
+        const newNote = {}
+
+        setTitle("");
+        setDescription("");
+        onAddNewNode(newNote);
     };
 
     return (

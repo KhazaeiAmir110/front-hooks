@@ -1,13 +1,23 @@
 import "../css/notes/App.css"
 import AddNewNote from "../components/notes/AddNewNote.jsx";
+import NoteList from "../components/notes/NoteList.jsx";
+import {useState} from "react";
 
-function CourseListPage(props){
+function CourseListPage(){
+    const [notes, setNotes] = useState([]);
+
+    const handelNote = (newNote) => {
+        setNotes((prevNote) => [...prevNote, newNote]);
+    }
+
     return (
         <div className="container">
             <div className="note-header">header</div>
             <div className="note-app">
-                <AddNewNote/>
-                <div className="note-container">container note</div>
+                <AddNewNote onAddNewNode={handelNote}/>
+                <div className="note-container">
+                    <NoteList notes={notes}/>
+                </div>
             </div>
         </div>
     )
