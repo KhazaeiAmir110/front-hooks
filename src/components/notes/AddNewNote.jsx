@@ -8,12 +8,12 @@ function AddNewNote({onAddNewNode}) {
 
     const handelSubmit = (e) => {
         e.preventDefault();
-        if (!title || !description) return;
-        const newNote = {}
+        if (!title || !description) return null;
+        const newNote = {title, description};
 
+        onAddNewNode(newNote);
         setTitle("");
         setDescription("");
-        onAddNewNode(newNote);
     };
 
     return (
